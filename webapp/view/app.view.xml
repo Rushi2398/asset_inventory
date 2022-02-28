@@ -1,0 +1,37 @@
+<mvc:View
+    controllerName="sap.ui.inventory.controller.app"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+>
+    <App id="app">
+        <pages>
+            <Page id="page" title="{i18n>title}">
+                <content>
+                    <VBox id="_IDGenVBox1" fitContainer="true">
+                        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Inventories" 
+                            useToolbar="true" showFilterConfiguration="true">
+                            <smartFilterBar:controlConfiguration>
+                                <smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration1" key="AssetID" 
+                                    visibleInAdvancedArea="true"
+                                    preventInitialDataFetchInValueHelpDialog="false">
+                                </smartFilterBar:ControlConfiguration>
+                            </smartFilterBar:controlConfiguration>
+                        </smartFilterBar:SmartFilterBar>
+                        <smartTable:SmartTable id="ProductsSmartTable" entitySet="Inventories" tableType="GridTable" 
+                            smartFilterId="smartFilterBar" header="Asset Inventory" showRowCount="true"
+                            useExportToExcel="true" useVariantManagement="true" enableAutoBinding="true" 
+                            useTablePersonalisation="true" editTogglable="true" >
+                            <smartTable:layoutData>
+					            <FlexItemData id="_IDGenFlexItemData1" growFactor="1" baseSize="0%"/>
+				            </smartTable:layoutData>
+                        </smartTable:SmartTable>
+                    </VBox>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>
