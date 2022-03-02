@@ -14,7 +14,6 @@ sap.ui.define([
 		init: function() {
 			// create
             
-            console.log("PRINT")
 			var oMockServer = new MockServer({
 				rootUri: "/"
 			});

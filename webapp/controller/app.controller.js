@@ -9,7 +9,6 @@ sap.ui.define([
 
         return Controller.extend("sap.ui.inventory.controller.app", {
             onInit: function () {
-
             }
         });
     });

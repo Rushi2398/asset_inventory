@@ -2,7 +2,6 @@ sap.ui.define([
 	"sap/ui/inventory/localService/mockServer"
 ], function (mockserver) {
 	"use strict";
-    console.log("Inside Init")
 	// initialize the mock server
 	mockserver.init();
 

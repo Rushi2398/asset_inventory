@@ -18,15 +18,16 @@
         <Schema Namespace="Asset.Models"
             xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
             xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
-            xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
-            <EntityType Name="Inventory">
+            xmlns="http://schemas.microsoft.com/ado/2006/04/edm"
+            xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+            <EntityType Name="Inventory" sap:value-list="true">
                 <Key>
                     <PropertyRef Name="AssetID" />
                 </Key>
                 <Property Name="AssetID" Type="Edm.Int32" Nullable="false" />
                 <Property Name="SubNumber" Type="Edm.Int32" Nullable="false" />
                 <Property Name="Segment" Type="Edm.Int32" Nullable="false" />
-                <Property Name="Availability" Type="Edm.String" Nullable="false" />
+                <Property Name="Availability" Type="Edm.String" Nullable="false" sap:value-list="fixed-values"/>
                 <Property Name="InOperation" Type="Edm.String" Nullable="false" />
                 <Property Name="Other" Type="Edm.String" Nullable="false" />
                 <Property Name="LastInventory" Type="Edm.Date" Nullable="false" />
@@ -46,78 +47,8 @@
                 <Property Name="CostCenter" Type="Edm.Int32" Nullable="false" />
             </EntityType>
             <EntityContainer Name="Assets" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-                <EntitySet Name="Inventories" EntityType="Asset.Models.Inventory" />
+                <EntitySet Name="Inventories" EntityType="Asset.Models.Inventory" sap:semantics="fixed-values"/>
             </EntityContainer>
-            <Annotations Target="Asset.Models.Inventory">
-                <Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
-                    <Collection>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="AssetID"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="SubNumber"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <!-- <PropertyValue Property="Label" String="Supplier Name"/> -->
-                            <PropertyValue Property="Value" Path="Segment"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="Availability"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="InOperation"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="Other"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="LastInventory"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="CompanyCode"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="Description1"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="Description2"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="AssetText"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="AssetStructure"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="AssetStructureDescription"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="EquipmentNumber"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="TechObjDescription"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="EquipmentStatus"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="InventoryNumber"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="InventoryNote"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="BaseUnit"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="Quantity"/>
-                        </Record>
-                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="CostCenter"/>
-                        </Record>
-                    </Collection>
-                </Annotation>
-            </Annotations>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>
