@@ -34,24 +34,28 @@
                             <table:Table id="_IDGenTable1">
                                 <table:columns>
                                     <table:Column id="_IDGenColumn1" width="6rem">
-                                    <table:customData>
-                                    <core:CustomData key="p13nData"
-                                    value='\{"columnKey": "Availability", "leadingProperty": "Availability", "sortProperty": "Availability", "filterProperty": "Availability", "columnIndex": 3}'/>
-                                    </table:customData>
-                                    <Text id="_IDGenText1" text="Availability"></Text>
-                                    <table:template>
-                                        <ComboBox id="_IDGenObjectStatus1" value="{Availability}"></ComboBox>
-                                    </table:template>
+                                        <table:customData>
+                                            <core:CustomData key="p13nData"
+                                            value='\{"columnKey": "Availability", "leadingProperty": "Availability", "sortProperty": "Availability", "filterProperty": "Availability", "columnIndex": 3}'/>
+                                        </table:customData>
+                                        <Text id="_IDGenText1" text="Availability"></Text>
+                                        <table:template>
+                                            <ComboBox id="_IDGenObjectStatus1" value="{Availability}" items="{custModel>/available}">
+                                                <core:Item id="_IDGenItem1" key="{custModel>key}" text="{custModel>value}"></core:Item>
+                                            </ComboBox>
+                                        </table:template>
                                     </table:Column>
                                     <table:Column id="_IDGenColumn2" width="9rem">
-                                    <table:customData>
-                                    <core:CustomData key="p13nData"
-                                    value='\{"columnKey": "InOperation", "leadingProperty": "InOperation", "sortProperty": "InOperation", "filterProperty": "InOperation", "columnIndex": 4}'/>
-                                    </table:customData>
-                                    <Text id="_IDGenText2" text="InOperation"></Text>
-                                    <table:template>
-                                        <ComboBox id="_IDGenObjectStatus2" value="{InOperation}"></ComboBox>
-                                    </table:template>
+                                        <table:customData>
+                                            <core:CustomData key="p13nData"
+                                            value='\{"columnKey": "InOperation", "leadingProperty": "InOperation", "sortProperty": "InOperation", "filterProperty": "InOperation", "columnIndex": 4}'/>
+                                        </table:customData>
+                                        <Text id="_IDGenText2" text="InOperation"></Text>
+                                        <table:template>
+                                            <ComboBox id="_IDGenObjectStatus2" value="{InOperation}" items="{custModel>/inoperation}">
+                                                <core:Item id="_IDGenItem2" key="{custModel>key}" text="{custModel>value}"></core:Item>
+                                            </ComboBox>
+                                        </table:template>
                                     </table:Column>
                                     <table:Column id="_IDGenColumn3" width="15rem">
                                     <table:customData>
@@ -60,7 +64,9 @@
                                     </table:customData>
                                     <Text id="_IDGenText3" text="Other"></Text>
                                     <table:template>
-                                        <ComboBox id="_IDGenObjectStatus3" value="{Other}"></ComboBox>
+                                        <ComboBox id="_IDGenObjectStatus3" value="{Other}" items="{custModel>/other}">
+                                            <core:Item id="_IDGenItem3" key="{custModel>key}" text="{custModel>value}"></core:Item>
+                                        </ComboBox>
                                     </table:template>
                                     </table:Column>
                                 </table:columns>
