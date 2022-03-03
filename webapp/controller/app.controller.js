@@ -48,6 +48,21 @@ sap.ui.define([
                 }
                 var oModel = new JSONModel(oData);
                 this.getView().setModel(oModel,"custModel");
-            }
+
+                var oTable = this.getView().byId("_IDGenTable1");
+                var colCount = 7;
+                oTable.setFixedColumnCount(colCount);
+            },
+            // onSelection: function(event){
+            //     var oValue = event.getParameter("selectedItem").getParent().getValue()
+            //     var path =event.getSource().getBindingContext().getPath();
+            //     this.getView().byId("_IDGenObjectStatus2").setEnabled(false)
+            //     console.log(path)
+            // },
+            // onSelection1: function(event){
+            //     var oValue = event.getParameter("selectedItem").getParent().getValue()
+            //     var path =event.getSource().getBindingContext().getPath();
+            //     console.log(path)
+            // }
         });
     });

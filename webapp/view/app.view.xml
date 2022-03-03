@@ -40,7 +40,7 @@
                                         </table:customData>
                                         <Text id="_IDGenText1" text="Availability"></Text>
                                         <table:template>
-                                            <ComboBox id="_IDGenObjectStatus1" value="{Availability}" items="{custModel>/available}">
+                                            <ComboBox id="_IDGenObjectStatus1" value="{Availability}" items="{custModel>/available}" selectionChange="onSelection">
                                                 <core:Item id="_IDGenItem1" key="{custModel>key}" text="{custModel>value}"></core:Item>
                                             </ComboBox>
                                         </table:template>
@@ -52,7 +52,7 @@
                                         </table:customData>
                                         <Text id="_IDGenText2" text="InOperation"></Text>
                                         <table:template>
-                                            <ComboBox id="_IDGenObjectStatus2" value="{InOperation}" items="{custModel>/inoperation}">
+                                            <ComboBox id="_IDGenObjectStatus2" value="{InOperation}" items="{custModel>/inoperation}" selectionChange="onSelection1">
                                                 <core:Item id="_IDGenItem2" key="{custModel>key}" text="{custModel>value}"></core:Item>
                                             </ComboBox>
                                         </table:template>
@@ -74,6 +74,13 @@
                         </smartTable:SmartTable>
                     </VBox>
                 </content>
+                <footer>
+                    <OverflowToolbar id="_IDGenOverflowToolbar1">
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                        <Button id="_IDGenButton1" type="Accept" text="Accept"/>
+                        <Button id="_IDGenButton2" type="Reject" text="Reject"/>
+                    </OverflowToolbar>
+                </footer>
             </Page>
         </pages>
     </App>
