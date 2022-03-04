@@ -28,6 +28,7 @@
                 <Property Name="SubNumber" Type="Edm.Int32" Nullable="false" />
                 <Property Name="Segment" Type="Edm.Int32" Nullable="false" />
                 <Property Name="Availability" Type="Edm.String" Nullable="false" sap:value-list="fixed-values"/>
+                <Property Name="showAssetInOpertnDpDn" Type="Edm.Boolean" Nullable="false"/>
                 <Property Name="InOperation" Type="Edm.String" Nullable="false" />
                 <Property Name="Other" Type="Edm.String" Nullable="false" />
                 <Property Name="LastInventory" Type="Edm.Date" Nullable="false" />
