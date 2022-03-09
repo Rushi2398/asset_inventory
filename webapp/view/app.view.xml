@@ -3,11 +3,9 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
     displayBlock="true"
-    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
     xmlns="sap.m"
     xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
     xmlns:smartTable="sap.ui.comp.smarttable"
-    xmlns:smartField="sap.ui.comp.smartfield"
     xmlns:table="sap.ui.table"
 >
     <App id="app">
@@ -27,10 +25,17 @@
                         <smartTable:SmartTable id="InventoryTable" entitySet="Inventories" tableType="Table" 
                             smartFilterId="smartFilterBar" header="Asset Inventory" showRowCount="true"
                             useExportToExcel="true" useVariantManagement="true" enableAutoBinding="true" 
-                            useTablePersonalisation="true" editTogglable="true" >
+                            useTablePersonalisation="true" editTogglable="true" 
+                            requestAtLeastFields="showAssetInOpertnDpDn" ignoredFields="showAssetInOpertnDpDn">
                             <smartTable:layoutData>
 					            <FlexItemData id="_IDGenFlexItemData1" growFactor="1" baseSize="0%"/>
 				            </smartTable:layoutData>
+                            <smartTable:customToolbar>
+                                <OverflowToolbar id="_IDGenOverflowToolbar2" style="Clear">
+                                    <ToolbarSpacer id="_IDGenToolbarSpacer2"/>
+                                    <Button id="massUpdate" text="Mass Update" press="onMassUpdatePress"/>
+                                </OverflowToolbar>
+                            </smartTable:customToolbar>
                             <table:Table id="_IDGenTable1">
                                 <table:columns>
                                     <table:Column id="_IDGenColumn1" width="6rem">
@@ -40,7 +45,7 @@
                                         </table:customData>
                                         <Text id="_IDGenText1" text="Availability"></Text>
                                         <table:template>
-                                            <ComboBox id="_IDGenObjectStatus1" value="{Availability}" items="{custModel>/available}" selectionChange="onSelection">
+                                            <ComboBox id="_IDGenObjectStatus1" value="{Availability}" items="{custModel>/available}" selectionChange="onAvailabilitySelection">
                                                 <core:Item id="_IDGenItem1" key="{custModel>key}" text="{custModel>value}"></core:Item>
                                             </ComboBox>
                                         </table:template>
@@ -52,7 +57,7 @@
                                         </table:customData>
                                         <Text id="_IDGenText2" text="InOperation"></Text>
                                         <table:template>
-                                            <ComboBox id="_IDGenObjectStatus2" value="{InOperation}" items="{custModel>/inoperation}" selectionChange="onSelection1">
+                                            <ComboBox id="_IDGenObjectStatus2" value="{InOperation}" items="{custModel>/inoperation}" enabled="{showAssetInOpertnDpDn}" selectionChange="onSelection1">
                                                 <core:Item id="_IDGenItem2" key="{custModel>key}" text="{custModel>value}"></core:Item>
                                             </ComboBox>
                                         </table:template>
