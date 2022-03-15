@@ -90,6 +90,26 @@ sap.ui.define([
                 var oTable = this.getView().byId("_IDGenTable1");
                 var rows = oTable.getRows();
                 var selectIndices = oTable.getSelectedIndices();
+                var that = this;
+                if (available === "") {
+                    MessageBox.error("Select one value from Availability!");
+                } else if (available === "Yes"){
+                    if (inOperation === "") {
+                        MessageBox.error("Select one value from InOperation")
+                    } else {
+                        that._populateData(available, inOperation, other, rows, selectIndices);
+                    }
+                } 
+            },
+            validateData : function(){
+                var available = sap.ui.getCore().byId("_IDGenComboStatus1").getValue();
+                if (available === "No"){
+                    sap.ui.getCore().getControl("_IDGenComboStatus2").setEnabled(false);
+                } else {
+                    sap.ui.getCore().getControl("_IDGenComboStatus2").setEnabled(true);
+                }
+            },
+            _populateData : function(available, inOperation, other, rows, selectIndices){
                 for( var i of selectIndices){
                     var  path = rows[i].getBindingContext().getPath();
                     var oDataModel = this.getOwnerComponent().getModel();
@@ -105,14 +125,7 @@ sap.ui.define([
                     }
                 }
                 this._getDialog().close();
-            },
-            validateData : function(){
-                var available = sap.ui.getCore().byId("_IDGenComboStatus1").getValue();
-                if (available === "No"){
-                    sap.ui.getCore().getControl("_IDGenComboStatus2").setEnabled(false);
-                } else {
-                    sap.ui.getCore().getControl("_IDGenComboStatus2").setEnabled(true);
-                }
+                return;                
             },
             closeDialog: function () {
                 this._getDialog().close();

@@ -38,6 +38,16 @@
                             </smartTable:customToolbar>
                             <table:Table id="_IDGenTable1">
                                 <table:columns>
+                                    <table:Column id="_IDGenColumn5" width="6rem">
+                                        <table:customData>
+                                            <core:CustomData key="p13nData"
+                                            value='\{"columnKey": "AssetID", "leadingProperty": "AssetID", "sortProperty": "AssetID", "filterProperty": "AssetID", "columnIndex": 0}'/>
+                                        </table:customData>
+                                        <Text id="_IDGenText5" text="Availability"></Text>
+                                        <table:template>
+                                            <Link id="_IDGenLink1" text="{AssetID}" emphasized="true" href="https://sapui5.hana.ondemand.com/#/entity/sap.m.Link/sample/sap.m.sample.LinkEmphasized"></Link>
+                                        </table:template>
+                                    </table:Column>
                                     <table:Column id="_IDGenColumn1" width="6rem">
                                         <table:customData>
                                             <core:CustomData key="p13nData"
