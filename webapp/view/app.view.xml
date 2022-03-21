@@ -92,8 +92,7 @@
                 <footer>
                     <OverflowToolbar id="_IDGenOverflowToolbar1">
                         <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
-                        <Button id="_IDGenButton1" type="Accept" text="Accept"/>
-                        <Button id="_IDGenButton2" type="Reject" text="Reject"/>
+                        <Button id="_IDGenButton1" type="Emphasized" text="Save"/>
                     </OverflowToolbar>
                 </footer>
             </Page>
