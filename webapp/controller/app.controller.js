@@ -58,8 +58,15 @@ sap.ui.define([
             },
 
             onAvailabilitySelection: function(event){
-                var oDataModel = this.getOwnerComponent().getModel();            
-                var oValue = event.getParameter("selectedItem").getParent().getValue();
+                var oDataModel = this.getOwnerComponent().getModel();
+                try{
+                    var oValue = event.getParameter("selectedItem").getParent().getValue();
+                    var oBox = event.getSource();
+                    oBox.setValueState(sap.ui.core.ValueState.None);
+                } catch {
+                    this.handleChange(event);
+                }      
+                // var oValue = event.getParameter("selectedItem").getParent().getValue();
                 var path = event.getSource().getBindingContext().getPath();
                 if (oValue === "No") {
                     oDataModel.setProperty(path+"/showAssetInOpertnDpDn",false)
@@ -86,18 +93,18 @@ sap.ui.define([
                 return this._oDialog;
             },
 
-            // handleChange: function (oEvent) {
-            //     var oValidatedComboBox = oEvent.getSource(),
-            //         sSelectedKey = oValidatedComboBox.getSelectedKey(),
-            //         sValue = oValidatedComboBox.getValue();
+            handleChange: function (oEvent) {
+                var oValidatedComboBox = oEvent.getSource(),
+                    sSelectedKey = oValidatedComboBox.getSelectedKey(),
+                    sValue = oValidatedComboBox.getValue();
     
-            //     if (!sSelectedKey && sValue) {
-            //         oValidatedComboBox.setValueState(sap.ui.core.ValueState.Error);
-            //         oValidatedComboBox.setValueStateText("Please enter a valid Selection!");
-            //     } else {
-            //         oValidatedComboBox.setValueState(sap.ui.core.ValueState.None);
-            //     }
-            // },
+                if (!sSelectedKey && sValue) {
+                    oValidatedComboBox.setValueState(sap.ui.core.ValueState.Error);
+                    oValidatedComboBox.setValueStateText("Please enter a valid Selection!");
+                } else {
+                    oValidatedComboBox.setValueState(sap.ui.core.ValueState.None);
+                }
+            },
 
             saveDialog: function() {
                 var available = sap.ui.getCore().byId("_IDGenComboStatus1").getValue();
