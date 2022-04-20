@@ -66,7 +66,7 @@
                                         </table:customData>
                                         <Text id="_IDGenText2" text="InOperation"></Text>
                                         <table:template>
-                                            <ComboBox id="_IDGenObjectStatus2" value="{InOperation}" items="{custModel>/inoperation}" enabled="{showAssetInOpertnDpDn}" selectionChange="onSelection1">
+                                            <ComboBox id="_IDGenObjectStatus2" value="{InOperation}" items="{custModel>/inoperation}" enabled="{showAssetInOpertnDpDn}" selectionChange="onOperationSelection">
                                                 <core:Item id="_IDGenItem2" key="{custModel>key}" text="{custModel>value}"></core:Item>
                                             </ComboBox>
                                         </table:template>
@@ -78,7 +78,7 @@
                                     </table:customData>
                                     <Text id="_IDGenText3" text="Other"></Text>
                                     <table:template>
-                                        <ComboBox id="_IDGenObjectStatus3" value="{Other}" items="{custModel>/other}"  enabled="{showAssetInOpertnDpDn}">
+                                        <ComboBox id="_IDGenObjectStatus3" value="{Other}" items="{custModel>/other}"  enabled="{showAssetInOpertnDpDn}" selectionChange="onOtherSelection">
                                             <core:Item id="_IDGenItem3" key="{custModel>key}" text="{custModel>value}"></core:Item>
                                         </ComboBox>
                                     </table:template>

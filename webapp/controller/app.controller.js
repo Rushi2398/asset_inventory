@@ -6,7 +6,7 @@ sap.ui.define([
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, MessageBox, library) {
+    function (Controller, JSONModel, MessageBox) {
         "use strict";
 
         return Controller.extend("sap.ui.inventory.controller.app", {
@@ -59,19 +59,44 @@ sap.ui.define([
 
             onAvailabilitySelection: function(event){
                 var oDataModel = this.getOwnerComponent().getModel();
-                try{
-                    var oValue = event.getParameter("selectedItem").getParent().getValue();
-                    var oBox = event.getSource();
-                    oBox.setValueState(sap.ui.core.ValueState.None);
-                } catch {
-                    this.handleChange(event);
-                }      
-                // var oValue = event.getParameter("selectedItem").getParent().getValue();
+                this._checkInputComboBox(event);
+                var oValue = event.getSource().getValue();
                 var path = event.getSource().getBindingContext().getPath();
                 if (oValue === "No") {
                     oDataModel.setProperty(path+"/showAssetInOpertnDpDn",false)
                 } else {
                     oDataModel.setProperty(path+"/showAssetInOpertnDpDn",true)
+                }
+            },
+
+            onOperationSelection : function(event){
+                this._checkInputComboBox(event);
+            },
+
+            onOtherSelection : function(event){
+                this._checkInputComboBox(event);
+            },
+
+            _checkInputComboBox : function(event) {
+                try{
+                    var oValue = event.getParameter("selectedItem").getParent().getValue();
+                    var oBox = event.getSource();
+                    oBox.setValueState(sap.ui.core.ValueState.None);
+                } catch {
+                    this._handleChange(event);
+                }
+            },
+
+            _handleChange: function (oEvent) {
+                var oValidatedComboBox = oEvent.getSource(),
+                    sSelectedKey = oValidatedComboBox.getSelectedKey(),
+                    sValue = oValidatedComboBox.getValue();
+    
+                if (!sSelectedKey && sValue) {
+                    oValidatedComboBox.setValueState(sap.ui.core.ValueState.Error);
+                    oValidatedComboBox.setValueStateText("Please enter a valid Selection!");
+                } else {
+                    oValidatedComboBox.setValueState(sap.ui.core.ValueState.None);
                 }
             },
 
@@ -93,19 +118,6 @@ sap.ui.define([
                 return this._oDialog;
             },
 
-            handleChange: function (oEvent) {
-                var oValidatedComboBox = oEvent.getSource(),
-                    sSelectedKey = oValidatedComboBox.getSelectedKey(),
-                    sValue = oValidatedComboBox.getValue();
-    
-                if (!sSelectedKey && sValue) {
-                    oValidatedComboBox.setValueState(sap.ui.core.ValueState.Error);
-                    oValidatedComboBox.setValueStateText("Please enter a valid Selection!");
-                } else {
-                    oValidatedComboBox.setValueState(sap.ui.core.ValueState.None);
-                }
-            },
-
             saveDialog: function() {
                 var available = sap.ui.getCore().byId("_IDGenComboStatus1").getValue();
                 var inOperation = sap.ui.getCore().byId("_IDGenComboStatus2").getValue();
@@ -117,8 +129,8 @@ sap.ui.define([
                 if (available === "") {
                     MessageBox.error("Select one value from Availability!");
                 } else if (available === "Yes"){
-                    if (inOperation === "") {
-                        MessageBox.error("Select one value from InOperation")
+                    if (inOperation === "" || other === "") {
+                        MessageBox.error("Select values for In Operation and Other both")
                     } else {
                         that._populateData(available, inOperation, other, rows, selectIndices);
                     }
@@ -164,6 +176,7 @@ sap.ui.define([
                 sap.ui.getCore().byId("_IDGenComboStatus3").setValue(null);
                 sap.ui.getCore().getControl("_IDGenComboStatus2").setEnabled(true);
                 sap.ui.getCore().getControl("_IDGenComboStatus3").setEnabled(true);
+                this.getView().byId("_IDGenTable1").clearSelection();
                 this._getDialog().close();
             },
 
