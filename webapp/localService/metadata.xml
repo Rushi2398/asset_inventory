@@ -20,14 +20,14 @@
             xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
             xmlns="http://schemas.microsoft.com/ado/2006/04/edm"
             xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
-            <EntityType Name="Inventory" sap:value-list="true">
+            <EntityType Name="Inventory">
                 <Key>
                     <PropertyRef Name="AssetID" />
                 </Key>
                 <Property Name="AssetID" Type="Edm.String" Nullable="false" />
                 <Property Name="SubNumber" Type="Edm.Int32" Nullable="false" />
                 <Property Name="Segment" Type="Edm.Int32" Nullable="false" />
-                <Property Name="Availability" Type="Edm.String" Nullable="false" sap:value-list="fixed-values"/>
+                <Property Name="Availability" Type="Edm.String" Nullable="false" />
                 <Property Name="showAssetInOpertnDpDn" Type="Edm.Boolean" Nullable="false"/>
                 <Property Name="InOperation" Type="Edm.String" Nullable="false" />
                 <Property Name="Other" Type="Edm.String" Nullable="false" />
@@ -46,6 +46,39 @@
                 <Property Name="BaseUnit" Type="Edm.String" Nullable="false" />
                 <Property Name="Quantity" Type="Edm.Int32" Nullable="false" />
                 <Property Name="CostCenter" Type="Edm.Int32" Nullable="false" />
+                <Property Name="CostCenterDescription" Type="Edm.String" Nullable="false" />
+                <Property Name="RealEstateObject" Type="Edm.String" Nullable="false" />
+                <Property Name="RealEstateObjectDescription" Type="Edm.Int32" Nullable="false" />
+                <Property Name="Plant" Type="Edm.String" Nullable="false" />
+                <Property Name="Location" Type="Edm.String" Nullable="false" />
+                <Property Name="LineAndPos" Type="Edm.String" Nullable="false" />
+                <Property Name="EvaluationGroup5Description" Type="Edm.String" Nullable="false" />
+                <Property Name="CapitalizedOn" Type="Edm.Date" Nullable="false" />
+                <Property Name="UsefulLife" Type="Edm.Int32" Nullable="false" />
+                <Property Name="Periods" Type="Edm.Int32" Nullable="false" />
+                <Property Name="CumAcquisVal" Type="Edm.Int32" Nullable="false" />
+                <Property Name="CumAcquisVal2" Type="Edm.Int32" Nullable="false" />
+                <Property Name="NetBookValueYearEnd" Type="Edm.Int32" Nullable="false" />
+                <Property Name="NetBookValueYearEnd2" Type="Edm.Int32" Nullable="false" />
+                <Property Name="WBSElement" Type="Edm.String" Nullable="false" />
+                <Property Name="WBSElementDescription" Type="Edm.String" Nullable="false" />
+                <Property Name="EyNx" Type="Edm.Int32" Nullable="false" />
+                <Property Name="LineKMFrom" Type="Edm.String" Nullable="false" />
+                <Property Name="LineKMTo" Type="Edm.String" Nullable="false" />
+                <Property Name="FirstAcqOf" Type="Edm.Date" Nullable="false" />
+                <Property Name="ProfitCenter" Type="Edm.Int32" Nullable="false" />
+                <Property Name="EvaluationGroup4" Type="Edm.Int32" Nullable="false" />
+                <Property Name="AssetClass" Type="Edm.Int32" Nullable="false" />
+                <Property Name="AccountDeterm" Type="Edm.Int32" Nullable="false" />
+                <Property Name="FirstAcquisitionYr" Type="Edm.String" Nullable="false" />
+                <Property Name="AcqPer" Type="Edm.Date" Nullable="false" />
+                <Property Name="DeactDate" Type="Edm.Date" Nullable="false" />
+                <Property Name="ActivityType" Type="Edm.String" Nullable="false" />
+                <Property Name="GeoRefQuality" Type="Edm.String" Nullable="false" />
+                <Property Name="ValueDivQuota" Type="Edm.String" Nullable="false" />
+                <Property Name="OrdDepStart" Type="Edm.Date" Nullable="false" />
+                <Property Name="ExpUsefulLife" Type="Edm.Date" Nullable="false" />
+                <Property Name="ExpULPer" Type="Edm.Date" Nullable="false" />
             </EntityType>
             <EntityContainer Name="Assets" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
                 <EntitySet Name="Inventories" EntityType="Asset.Models.Inventory" sap:semantics="fixed-values"/>

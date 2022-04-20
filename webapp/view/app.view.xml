@@ -23,13 +23,12 @@
                             </smartFilterBar:controlConfiguration>
                         </smartFilterBar:SmartFilterBar>
                         <smartTable:SmartTable id="InventoryTable" entitySet="Inventories" tableType="Table" 
-                            smartFilterId="smartFilterBar" header="Asset Inventory" showRowCount="true"
-                            useExportToExcel="true" useVariantManagement="true" enableAutoBinding="true" 
-                            useTablePersonalisation="true" editTogglable="true" 
+                            smartFilterId="smartFilterBar" beforeExport="onBeforeExport" header="Asset Inventory" showRowCount="true"
+                            useExportToExcel="true" enableAutoBinding="true" useTablePersonalisation="true" 
                             requestAtLeastFields="showAssetInOpertnDpDn" ignoredFields="showAssetInOpertnDpDn">
-                            <smartTable:layoutData>
+                            <!-- <smartTable:layoutData>
 					            <FlexItemData id="_IDGenFlexItemData1" growFactor="1" baseSize="0%"/>
-				            </smartTable:layoutData>
+				            </smartTable:layoutData> -->
                             <smartTable:customToolbar>
                                 <OverflowToolbar id="_IDGenOverflowToolbar2" style="Clear">
                                     <ToolbarSpacer id="_IDGenToolbarSpacer2"/>
@@ -43,9 +42,9 @@
                                             <core:CustomData key="p13nData"
                                             value='\{"columnKey": "AssetID", "leadingProperty": "AssetID", "sortProperty": "AssetID", "filterProperty": "AssetID", "columnIndex": 0}'/>
                                         </table:customData>
-                                        <Text id="_IDGenText5" text="Availability"></Text>
+                                        <Text id="_IDGenText5" text="Asset ID"></Text>
                                         <table:template>
-                                            <Link id="_IDGenLink1" text="{AssetID}" emphasized="true" href="https://sapui5.hana.ondemand.com/#/entity/sap.m.Link/sample/sap.m.sample.LinkEmphasized"></Link>
+                                            <Link id="_IDGenLink1" text="{AssetID}" target="_blank" emphasized="true" href="https://sapui5.hana.ondemand.com/#/entity/sap.m.Link/sample/sap.m.sample.LinkEmphasized"></Link>
                                         </table:template>
                                     </table:Column>
                                     <table:Column id="_IDGenColumn1" width="6rem">
@@ -79,7 +78,7 @@
                                     </table:customData>
                                     <Text id="_IDGenText3" text="Other"></Text>
                                     <table:template>
-                                        <ComboBox id="_IDGenObjectStatus3" value="{Other}" items="{custModel>/other}">
+                                        <ComboBox id="_IDGenObjectStatus3" value="{Other}" items="{custModel>/other}"  enabled="{showAssetInOpertnDpDn}">
                                             <core:Item id="_IDGenItem3" key="{custModel>key}" text="{custModel>value}"></core:Item>
                                         </ComboBox>
                                     </table:template>
@@ -92,7 +91,8 @@
                 <footer>
                     <OverflowToolbar id="_IDGenOverflowToolbar1">
                         <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
-                        <Button id="_IDGenButton1" type="Emphasized" text="Save"/>
+                        <Button id="_IDGenButton1" type="Emphasized" text="Save" width="5rem"/>
+                        <Button id="_IDGenButton2" type="Default" text="Cancel" width="5rem" press="onRefresh"/>
                     </OverflowToolbar>
                 </footer>
             </Page>

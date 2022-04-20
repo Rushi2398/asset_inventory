@@ -28,12 +28,11 @@
                             <PropertyValue Property="Value" Path="SubNumber"/>
                             <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
                                 <Record>
-                                    <PropertyValue Property="width" String="7rem"/>
+                                    <PropertyValue Property="width" String="6rem"/>
                                 </Record>
                             </Annotation>
                         </Record>
                         <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <!-- <PropertyValue Property="Label" String="Supplier Name"/> -->
                             <PropertyValue Property="Value" Path="Segment"/>
                             <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
                                 <Record>
@@ -74,7 +73,7 @@
                             </Annotation>
                         </Record>
                         <Record Type="com.sap.vocabularies.UI.v1.DataField">
-                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                            <PropertyValue Property="Value" Path="CompanyCode" />
                             <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
                                 <Record>
                                     <PropertyValue Property="width" String="7rem"/>
@@ -179,6 +178,271 @@
                         </Record>
                         <Record Type="com.sap.vocabularies.UI.v1.DataField">
                             <PropertyValue Property="Value" Path="CostCenter"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="CostCenterDescription"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="RealEstateObject"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="RealEstateObjectDescription"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="Plant"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="Location"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="LineAndPos"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="EvaluationGroup5Description"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="CapitalizedOn"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="UsefulLife"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="Periods"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="CumAcquisVal"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="CumAcquisVal2"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="NetBookValueYearEnd"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="NetBookValueYearEnd2"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <Annotation Term="com.sap.vocabularies.UI.v1.Hidden" Bool="true" />
+                            <PropertyValue Property="Value" Path="WBSElement"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="WBSElementDescription"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="EyNx"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="LineKMFrom"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="LineKMTo"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="FirstAcqOf"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="ProfitCenter"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="EvaluationGroup4"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="AssetClass"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="AccountDeterm"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="FirstAcquisitionYr"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="AcqPer"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="DeactDate"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="ActivityType"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="GeoRefQuality"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="ValueDivQuota"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="OrdDepStart"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="ExpUsefulLife"/>
+                            <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
+                                <Record>
+                                    <PropertyValue Property="width" String="7rem"/>
+                                </Record>
+                            </Annotation>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="ExpULPer"/>
                             <Annotation Term="com.sap.vocabularies.HTML5.v1.CssDefaults">
                                 <Record>
                                     <PropertyValue Property="width" String="7rem"/>
